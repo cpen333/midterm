@@ -42,6 +42,7 @@ int main() {
   // TODO: create and run 5 threads calling thread_increment
   //=========================================================
   SpinLock spin;
+
   for (int i=0; i<5; ++i) {
     thread_increment(counter);
   }

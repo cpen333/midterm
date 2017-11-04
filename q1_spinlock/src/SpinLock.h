@@ -9,7 +9,7 @@ class SpinLock {
 
  public:
 
-  SpinLock() : flag_(ATOMIC_FLAG_INIT) {}
+  SpinLock() : flag_{ATOMIC_FLAG_INIT} {}
 
   /**
    * Acquires the lock, blocking if necessary

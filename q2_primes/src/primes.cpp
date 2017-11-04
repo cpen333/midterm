@@ -1,14 +1,13 @@
 #include "primes.h"
 
 #include <cmath>
+#include <algorithm>
 
 //===================================================================
 // TODO: Fix bugs in binary_search
 //===================================================================
 int binary_search(const std::vector<int>& data, int val) {
 
-  // https://www.khanacademy.org/computing/computer-science/algorithms/
-  //       binary-search/a/implementing-binary-search-of-an-array
   size_t min = 0;
   size_t max = data.size(); // one beyond the top
 
@@ -37,7 +36,7 @@ int binary_search(const std::vector<int>& data, int val) {
 //===================================================================
 bool is_prime(int n) {
 
-  // even number, obviously not prime
+  // even number, obviously not prime, right??
   if ((n % 2) == 0) {
     return false;
   }
@@ -66,6 +65,9 @@ bool is_prime(int n) {
 
 std::vector<int> generate_primes(int n) {
 
+  // There's no need to decipher the contents of this code,
+  //   just test some inputs/outputs.
+
   // Modified sieve of eratosthenes
   // https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
   std::vector<int> primes;
@@ -82,7 +84,7 @@ std::vector<int> generate_primes(int n) {
   // details of prime range
   int sieve_min = 3;
   auto sieve_half_min = sieve_min / 2;
-  auto max_half_prime = (size_t)(n / 2);
+  auto max_half_prime = n / 2;
 
   // compute prime sieve in blocks of up to 2^16
   const size_t max_sieve_size = 1 << 16;  // 2^16
